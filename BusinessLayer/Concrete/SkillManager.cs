@@ -18,29 +18,29 @@ namespace BusinessLayer.Concrete
             _skilldal = skilldal;
         }
 
-        void IGenericService<Skill>.TAdd(Skill entity)
+        public void TAdd(Skill entity)
         {
             _skilldal.Insert(entity);
         }
 
-        void IGenericService<Skill>.TDelete(Skill entity)
+        public void TDelete(Skill entity)
         {
             _skilldal.Delete(entity);
         }
 
-        Skill IGenericService<Skill>.TGetByID(int id)
+        public Skill TGetByID(int id)
         {
             return _skilldal.GetByID(id);
         }
 
-        List<Skill> IGenericService<Skill>.TGetList()
+        public List<Skill> TGetList()
         {
             return _skilldal.GetList();
         }
 
-        void IGenericService<Skill>.TUpdate(Skill entity)
+        public void TUpdate(Skill entity)
         {
             _skilldal.Update(entity);
-        }
+        } 
     }
 }

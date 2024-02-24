@@ -18,27 +18,27 @@ namespace BusinessLayer.Concrete
             _servicedal = servicedal;
         }
 
-        void IGenericService<Service>.TAdd(Service entity)
+        public void TAdd(Service entity)
         {
             _servicedal.Insert(entity);
         }
 
-        void IGenericService<Service>.TDelete(Service entity)
+        public void TDelete(Service entity)
         {
             _servicedal.Delete(entity);
         }
 
-        Service IGenericService<Service>.TGetByID(int id)
+        public Service TGetByID(int id)
         {
             return _servicedal.GetByID(id);
         }
 
-        List<Service> IGenericService<Service>.TGetList()
+        public List<Service> TGetList()
         {
             return _servicedal.GetList();
         }
 
-        void IGenericService<Service>.TUpdate(Service entity)
+        public void TUpdate(Service entity)
         {
             _servicedal.Update(entity);
         }
