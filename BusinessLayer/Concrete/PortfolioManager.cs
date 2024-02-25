@@ -18,29 +18,29 @@ namespace BusinessLayer.Concrete
             _portfoliodal = portfoliodal;
         }
 
-        void IGenericService<Portfolio>.TAdd(Portfolio entity)
+        public void TAdd(Portfolio entity)
         {
             _portfoliodal.Insert(entity);
         }
 
-        void IGenericService<Portfolio>.TDelete(Portfolio entity)
+        public void TDelete(Portfolio entity)
         {
             _portfoliodal.Delete(entity);
         }
 
-        Portfolio IGenericService<Portfolio>.TGetByID(int id)
+        public Portfolio TGetByID(int id)
         {
             return _portfoliodal.GetByID(id);
         }
 
-        List<Portfolio> IGenericService<Portfolio>.TGetList()
+        public List<Portfolio> TGetList()
         {
             return _portfoliodal.GetList();
         }
 
-        void IGenericService<Portfolio>.TUpdate(Portfolio entity)
+        public void TUpdate(Portfolio entity)
         {
             _portfoliodal.Update(entity);
-        }
+        }  
     }
 }

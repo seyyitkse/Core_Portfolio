@@ -18,27 +18,27 @@ namespace BusinessLayer.Concrete
             _testimonialdal = testimonialdal;
         }
 
-        void IGenericService<Testimonial>.TAdd(Testimonial entity)
+        public void TAdd(Testimonial entity)
         {
             _testimonialdal.Insert(entity);
         }
 
-        void IGenericService<Testimonial>.TDelete(Testimonial entity)
+        public void TDelete(Testimonial entity)
         {
             _testimonialdal.Delete(entity);
         }
 
-        Testimonial IGenericService<Testimonial>.TGetByID(int id)
+        public Testimonial TGetByID(int id)
         {
             return _testimonialdal.GetByID(id);
         }
 
-        List<Testimonial> IGenericService<Testimonial>.TGetList()
+        public List<Testimonial> TGetList()
         {
             return _testimonialdal.GetList();
         }
 
-        void IGenericService<Testimonial>.TUpdate(Testimonial entity)
+        public void TUpdate(Testimonial entity)
         {
             _testimonialdal.Update(entity);
         }

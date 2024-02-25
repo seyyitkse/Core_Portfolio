@@ -18,27 +18,27 @@ namespace BusinessLayer.Concrete
             _experincedal = experincedal;
         }
 
-        void IGenericService<Experience>.TAdd(Experience entity)
+        public void TAdd(Experience entity)
         {
             _experincedal.Insert(entity);
         }
 
-        void IGenericService<Experience>.TDelete(Experience entity)
+        public void TDelete(Experience entity)
         {
             _experincedal.Delete(entity);
         }
 
-        Experience IGenericService<Experience>.TGetByID(int id)
+        public Experience TGetByID(int id)
         {
             return _experincedal.GetByID(id);
         }
 
-        List<Experience> IGenericService<Experience>.TGetList()
+        public List<Experience> TGetList()
         {
             return _experincedal.GetList();
         }
 
-        void IGenericService<Experience>.TUpdate(Experience entity)
+        public void TUpdate(Experience entity)
         {
             _experincedal.Update(entity);
         }
