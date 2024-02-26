@@ -18,29 +18,54 @@ namespace BusinessLayer.Concrete
             _messagedal = messagedal;
         }
 
-        void IGenericService<Message>.TAdd(Message entity)
+        public void TAdd(Message entity)
         {
             _messagedal.Insert(entity);
         }
 
-        void IGenericService<Message>.TDelete(Message entity)
+        public void TDelete(Message entity)
         {
             _messagedal.Delete(entity);
         }
 
-        Message IGenericService<Message>.TGetByID(int id)
+        public Message TGetByID(int id)
         {
-            return _messagedal.GetByID(id);
+            throw new NotImplementedException();
         }
 
-        List<Message> IGenericService<Message>.TGetList()
+        public List<Message> TGetList()
         {
-            return _messagedal.GetList();
+            throw new NotImplementedException();
         }
 
-        void IGenericService<Message>.TUpdate(Message entity)
+        public void TUpdate(Message entity)
         {
             _messagedal.Update(entity);
         }
+
+        //void IGenericService<Message>.TAdd(Message entity)
+        //{
+        //    _messagedal.Insert(entity);
+        //}
+
+        //void IGenericService<Message>.TDelete(Message entity)
+        //{
+        //    _messagedal.Delete(entity);
+        //}
+
+        //Message IGenericService<Message>.TGetByID(int id)
+        //{
+        //    return _messagedal.GetByID(id);
+        //}
+
+        //List<Message> IGenericService<Message>.TGetList()
+        //{
+        //    return _messagedal.GetList();
+        //}
+
+        //void IGenericService<Message>.TUpdate(Message entity)
+        //{
+        //    _messagedal.Update(entity);
+        //}
     }
 }
