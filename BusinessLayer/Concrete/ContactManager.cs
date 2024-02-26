@@ -18,27 +18,27 @@ namespace BusinessLayer.Concrete
             _contactdal = contactdal;
         }
 
-        void IGenericService<Contact>.TAdd(Contact entity)
+        public void TAdd(Contact entity)
         {
             _contactdal.Insert(entity);
         }
 
-        void IGenericService<Contact>.TDelete(Contact entity)
+        public void TDelete(Contact entity)
         {
             _contactdal.Delete(entity);
         }
 
-        Contact IGenericService<Contact>.TGetByID(int id)
+        public Contact TGetByID(int id)
         {
             return _contactdal.GetByID(id);
         }
 
-        List<Contact> IGenericService<Contact>.TGetList()
+        public List<Contact> TGetList()
         {
             return _contactdal.GetList();
         }
 
-        void IGenericService<Contact>.TUpdate(Contact entity)
+        public void TUpdate(Contact entity)
         {
             _contactdal.Update(entity);
         }
