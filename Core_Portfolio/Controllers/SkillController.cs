@@ -34,7 +34,6 @@ namespace Core_Portfolio.Controllers
         public IActionResult UpdateSkill(int id)
         {
             var values = skillManager.TGetByID(id);
-            skillManager.TDelete(values);
             return View(values);
         }
         [HttpPost]

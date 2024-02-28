@@ -1,0 +1,47 @@
+﻿@model EntityLayer.Concrete.Experience
+@{
+    ViewData["Title"] = "AddExperience";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="card-header border-0">
+    <h3 class="mb-0">Add New Skill</h3>
+</div>
+<form class="form-control" method="post">
+    <br />
+    <br />
+    <br />
+    <br />
+    @Html.Label("New Experience Name:")
+    <br />
+    @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+    <br />
+    <br />
+    @Html.Label("New Experience Date:")
+    <br />
+    @Html.TextBoxFor(x => x.Date, new { @class = "form-control" })
+    <br />
+    @Html.Label("New Experience Description:")
+    <br />
+    @Html.TextAreaFor(x => x.Description, new { @class = "form-control" })
+    <br />
+    @Html.Label("New Experience Image URL:")
+    <br />
+    @Html.TextBoxFor(x => x.ImageURL, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-primary" id="btnAdd"> Add Skill</button>
+</form>
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+<script>
+    window.onload = function () {
+        document.getElementById("btnAdd").addEventListener("click", function () {
+            swal({
+                title: "Succesfull!",
+                text: "Adding new experience is successful!",
+                icon: "success"
+            });
+        });
+    };
+</script>
