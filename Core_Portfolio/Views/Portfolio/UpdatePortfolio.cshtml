@@ -1,0 +1,35 @@
+﻿@model EntityLayer.Concrete.Portfolio
+@{
+    ViewData["Title"] = "UpdatePortfolio";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="card-header border-0">
+    <h3 class="mb-0">Update Portfolio</h3>
+</div>
+<form class="form-control" method="post">
+    <br />
+    <br />
+    <br />
+    <br />
+    @Html.HiddenFor(x => x.PortfolioID)
+
+    @Html.Label("Project Name:")
+    <br />
+    @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+    <br />
+    @Html.Label("Project URL:")
+    <br />
+    @Html.TextBoxFor(x => x.ProjectURL, new { @class = "form-control" })
+    <br />
+    @Html.Label("Image URL2:")
+    <br />
+    @Html.TextBoxFor(x => x.ImageURL, new { @class = "form-control" })
+    <br /> 
+    @Html.Label("Image URL2:")
+    <br />
+    @Html.TextBoxFor(x => x.ImageURL2, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-primary" id="btnAdd"> Update Experience</button>
+</form>
+
