@@ -1,28 +1,28 @@
 ﻿@model EntityLayer.Concrete.Portfolio
+
 @{
-    ViewData["Title"] = "UpdatePortfolio";
+    ViewData["Title"] = "AddPortfolio";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
 <div class="card-header border-0">
-    <h3 class="mb-0">Update Portfolio</h3>
+    <h3 class="mb-0">Add Portfolio</h3>
 </div>
 <form class="form-control" method="post">
     <br />
     <br />
     <br />
     <br />
-    @Html.HiddenFor(x => x.PortfolioID)
 
     @Html.Label("Project Name:")
     <br />
     @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
-    @Html.ValidationMessageFor(x => x.Name)
+    @Html.ValidationMessageFor(x=>x.Name)
     <br />
     @Html.Label("Project URL:")
     <br />
     @Html.TextBoxFor(x => x.ProjectURL, new { @class = "form-control" })
-    @Html.ValidationMessageFor(x => x.ProjectURL)
+    @Html.ValidationMessageFor(x=>x.ProjectURL)
     <br />
     @Html.Label("Small Image URL:")
     <br />
@@ -32,8 +32,9 @@
     @Html.Label("Large Image URL:")
     <br />
     @Html.TextBoxFor(x => x.ImageURL2, new { @class = "form-control" })
-    @Html.ValidationMessageFor(x => x.ImageURL2)
+    @Html.ValidationMessageFor(x=>x.ImageURL2)
     <br />
-    <button class="btn btn-primary" id="btnAdd"> Update Portfolio</button>
+    <button class="btn btn-primary" id="btnAdd"> Add Portfolio</button>
 </form>
+
 
