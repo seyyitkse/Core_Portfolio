@@ -1,0 +1,54 @@
+﻿@model EntityLayer.Concrete.About
+@{
+    ViewData["Title"] = "UpdateAbout";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="card-header border-0">
+    <h3 class="mb-0">Update About</h3>
+</div>
+<form class="form-control" method="post">
+    <br />
+    <br />
+    <br />
+    <br />
+    @*  Burada idyi vermezsen yeni değer olarak ekleyecektir. *@
+    @Html.HiddenFor(x => x.AboutID)
+    @Html.Label("Title:")
+    <br />
+    @Html.TextAreaFor(x => x.Title, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Title)
+    <br />
+    @Html.Label("Description:")
+    <br />
+    @Html.TextAreaFor(x => x.Description, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Description)
+    <br />
+    @Html.Label("Age:")
+    <br />
+    @Html.TextBoxFor(x => x.Age, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Age)
+    <br />
+    @Html.Label("Mail:")
+    @Html.TextBoxFor(x => x.Mail, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Mail)
+    <br />
+    @Html.Label("Phone:")
+    @Html.TextBoxFor(x => x.Phone, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Phone)
+    <br />
+    @Html.Label("Address:")
+    @Html.TextAreaFor(x => x.Address, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Address)
+    <br />
+    @Html.Label("Image URL:")
+    @Html.TextBoxFor(x => x.ImageURL, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.ImageURL)
+    <br />
+    <button class="btn btn-primary" id="btnAdd"> Update About</button>
+</form>
+
+
+
+
+
