@@ -14,5 +14,6 @@ namespace EntityLayer.Concrete
         public string Header { get; set; }
         public string Name { get; set; }
         public string Title { get; set; }
+        public bool Status{ get; set; }
     }
 }

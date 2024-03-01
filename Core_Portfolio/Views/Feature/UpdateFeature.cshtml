@@ -1,0 +1,37 @@
+﻿@model EntityLayer.Concrete.Feature
+@{
+    ViewData["Title"] = "UpdateFeature";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="card-header border-0">
+    <h3 class="mb-0">Add Portfolio</h3>
+</div>
+<form class="form-control" method="post">
+    <br />
+    <br />
+    <br />
+    <br />
+   @*  Burada idyi vermezsen yeni değer olarak ekleyecektir. *@
+    @Html.HiddenFor(x=>x.FeatureID)
+    @Html.Label("Header:")
+    <br />
+    @Html.TextBoxFor(x => x.Header, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Header)
+    <br />
+    @Html.Label("Name:")
+    <br />
+    @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Name)
+    <br />
+    @Html.Label("Title:")
+    <br />
+    @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Title)
+    <br />
+    <button class="btn btn-primary" id="btnAdd"> Add Portfolio</button>
+</form>
+
+
+
+
