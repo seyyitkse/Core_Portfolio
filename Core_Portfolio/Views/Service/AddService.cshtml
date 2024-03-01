@@ -1,0 +1,42 @@
+﻿@model EntityLayer.Concrete.Service
+
+@{
+    ViewData["Title"] = "AddService";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="card-header border-0">
+    <h3 class="mb-0">Add New Service</h3>
+</div>
+<form class="form-control" method="post">
+    <br />
+    <br />
+    <br />
+    <br />
+    @Html.Label("New Service Title:")
+    <br />
+    @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x=>x.Title)
+    <br />
+    @Html.Label("New Service Image URL:")
+    <br />
+    @Html.TextBoxFor(x => x.ImageURL, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x=>x.ImageURL)
+    <br />
+    <button class="btn btn-primary" id="btnAdd"> Add Skill</button>
+</form>
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+<script>
+    window.onload = function () {
+        document.getElementById("btnAdd").addEventListener("click", function () {
+            swal({
+                title: "Succesfull!",
+                text: "Adding new service is successful!",
+                icon: "success"
+            });
+        });
+    };
+</script>
+
