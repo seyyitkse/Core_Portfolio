@@ -2,65 +2,48 @@
 @model List<Feature>
 @{
     ViewData["Title"] = "Index";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
 }
-<div class="card-header border-0">
-    <h3 class="mb-0">Portfolio List Table</h3>
-</div>
-<div class="table-responsive">
-    <table class="table align-items-center table-flush">
-        <thead class="thead-bold">
-            <tr>
-                <th scope="col" class="sort" data-sort="name">#</th>
-                <th scope="col" class="sort" data-sort="budget">Header</th>
-                <th scope="col" class="sort" data-sort="budget">Name</th>
-                <th scope="col" class="sort" data-sort="budget">Title</th>
-                <th scope="col">Actions</th>
-            </tr>
-        </thead>
-        <tbody class="list">
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <th scope="row">
-                        <div class="media align-items-center">
-                            <div class="media-body">
-                                <strong> <span class="name mb-0 text-sm">@item.FeatureID</span></strong>
-                            </div>
-                        </div>
-                    </th>
 
-                    <td class="budget">
-                        @item.Header
-                    </td>
+<div class="row">
 
-                    <td class="budget">
-                        @item.Name
-                    </td>
-                    <td class="budget">
-                        @item.Title
-                    </td>
-                    <td>
-                        <div class="avatar-group">
-                            <a href="/Feature/UpdateFeature/@item.FeatureID" class="btn btn-primary"> Update</a>
-                        </div>
-                    </td>
-                    <td class="text-right">
-                        <div class="dropdown">
-                            <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-ellipsis-v"></i>
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                                <a class="dropdown-item" href="#">Action</a>
-                                <a class="dropdown-item" href="#">Another action</a>
-                                <a class="dropdown-item" href="#">Something else here</a>
-                            </div>
-                        </div>
-                    </td>
-                </tr>
-            }
+    <div class="col-lg-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Feature List Table</h4>    
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Header</th>
+                                <th>Name</th>
+                                <th>Title</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
 
-        </tbody>
-    </table>
+                                <tr>
+                                    <td> @item.FeatureID </td>
+                                    <td> @item.Header </td>
+                                    <td> @item.Name  </td>
+                                    <td> @item.Title  </td> 
+                                    <td>
+                                        <div class="avatar-group">
+                                            <a href="/Feature/UpdateFeature/@item.FeatureID" class="btn btn-primary"> Update</a>
+                                        </div>
+                                    </td>
+                                    
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
 
 </div>

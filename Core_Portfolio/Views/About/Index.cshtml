@@ -2,76 +2,54 @@
 @model List<About>
 @{
     ViewData["Title"] = "Index";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
 }
+<div class="row">
 
-
-
-<div class="card-header border-0">
-    <h3 class="mb-0">About List Table</h3>
-</div>
-<div class="table-responsive">
-    <table class="table align-items-center table-flush">
-        <thead class="thead-bold">
-            <tr>
-                <th scope="col" class="sort" data-sort="name">#</th>
-                <th scope="col" class="sort" data-sort="budget">Title</th>
-                <th scope="col" class="sort" data-sort="budget">Description</th>
-                <th scope="col" class="sort" data-sort="budget">Age</th>
-                <th scope="col" class="sort" data-sort="budget">Mail</th>
-                <th scope="col" class="sort" data-sort="budget">Address</th>
-                <th scope="col">Actions</th>
-            </tr>
-        </thead>
-        <tbody class="list">
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <th scope="row">
-                        <div class="media align-items-center">
-                            <div class="media-body">
-                                <strong> <span class="name mb-0 text-sm">@item.AboutID</span></strong>
-                            </div>
-                        </div>
-                    </th>
-
-                    <td class="budget">
-                        @item.Title
-                    </td>
-
-                    <td class="budget">
-                        @item.Description
-                    </td>
-                    <td class="budget">
-                        @item.Age
-                    </td>
-                    <td class="budget">
-                        @item.Mail
-                    </td>
-                    <td class="budget">
-                        @item.Address
-                    </td>
-                    <td>
-                        <div class="avatar-group">
-                            <a href="/About/UpdateAbout/@item.AboutID" class="btn btn-primary"> Update</a>
-                        </div>
-                    </td>
-                    <td class="text-right">
-                        <div class="dropdown">
-                            <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-ellipsis-v"></i>
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                                <a class="dropdown-item" href="#">Action</a>
-                                <a class="dropdown-item" href="#">Another action</a>
-                                <a class="dropdown-item" href="#">Something else here</a>
-                            </div>
-                        </div>
-                    </td>
-                </tr>
-            }
-
-        </tbody>
-    </table>
+    <div class="col-lg-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">About List Table</h4>
+                <p class="card-description">
+                    Add class <code>.table-bordered</code>
+                </p>
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th >#</th>
+                                <th >Title</th>
+                                <th >Description</th>
+                                <th >Age</th>
+                                <th >Mail</th>
+                                <th >Address</th>
+                                <th >Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                          
+                            <tr>
+                                <td> @item.AboutID </td>
+                                <td> @item.Title </td>
+                                <td> @item.Description  </td>
+                                <td> @item.Age  </td>
+                                <td> @item.Mail  </td>
+                                <td> @item.Phone</td>
+                                <td> @item.Address</td>
+                                    <td>
+                                        <div class="avatar-group">
+                                            <a href="/About/UpdateAbout/@item.AboutID" class="btn btn-primary"> Update</a>
+                                        </div>
+                                    </td>
+                            </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
 
 </div>
