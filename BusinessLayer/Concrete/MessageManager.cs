@@ -30,12 +30,12 @@ namespace BusinessLayer.Concrete
 
         public Message TGetByID(int id)
         {
-            throw new NotImplementedException();
+            return _messagedal.GetByID(id);
         }
 
         public List<Message> TGetList()
         {
-            throw new NotImplementedException();
+            return _messagedal.GetList();
         }
 
         public void TUpdate(Message entity)

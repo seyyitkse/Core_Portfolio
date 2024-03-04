@@ -6,10 +6,10 @@ namespace Core_Portfolio.ViewComponents.Dashboard
 {
     public class MessageList:ViewComponent
     {
-        MessageManager messageManager = new MessageManager(new EfMessageDal());
+        UserMessageManager  messageManager= new UserMessageManager(new EfUserMessageDal());
         public IViewComponentResult Invoke()
         {
-            var values=messageManager.TGetList();
+            var values=messageManager.GetUserMessageWithUserService();
             return View(values);
         }
     }
