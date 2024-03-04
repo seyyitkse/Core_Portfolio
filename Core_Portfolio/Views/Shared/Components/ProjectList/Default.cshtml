@@ -1,0 +1,58 @@
+﻿@using EntityLayer.Concrete
+@model List<Portfolio>
+<div class="row ">
+    <div class="col-12 grid-margin">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">All Project</h4>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>
+                                    <div class="form-check form-check-muted m-0">
+                                        <label class="form-check-label">
+                                            <input type="checkbox" class="form-check-input">
+                                        </label>
+                                    </div>
+                                </th>
+                                <th> Order No </th>
+                                <th> Project </th>
+                                <th> URL </th>
+                                <th> Payment Status </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                            <tr>
+                                <td>
+                                    <div class="form-check form-check-muted m-0">
+                                        <label class="form-check-label">
+                                            <input type="checkbox" class="form-check-input">
+                                        </label>
+                                    </div>
+                                </td>
+                                <td> @item.PortfolioID </td>
+                                <td> @item.Name </td>
+                                <td> <a href="@item.ProjectURL" target="_blank">Project</a> </td>
+                                <td>
+                                    @if (item.Status==true)
+                                        {
+                                            <div class="badge badge-outline-success">Approved</div>
+                                        }
+                                        else if (item.Status==false)
+                                        {
+                                            <div class="badge badge-outline-warning">Pending</div>
+                                        }
+                                </td>
+                            </tr>
+                            }
+     
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

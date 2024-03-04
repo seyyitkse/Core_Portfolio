@@ -15,5 +15,7 @@ namespace EntityLayer.Concrete
         public string ImageURL { get; set; }
         public string ProjectURL { get; set; }
         public string ImageURL2 { get; set; }
+        public int Price { get; set; }
+        public bool Status { get; set; }
     }
 }
