@@ -1,10 +1,13 @@
+using DataAccessLayer.Concrete;
+using EntityLayer.Concrete;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddDbContext<Context>();
+builder.Services.AddIdentity<WriterUser, WriterRole>().AddEntityFrameworkStores<Context>();
 builder.Services.AddControllersWithViews();
-
 var app = builder.Build();
-
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
@@ -13,22 +16,30 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
-app.UseHttpsRedirection();
-app.UseStaticFiles();
+    
 
-app.UseRouting();
+    app.UseHttpsRedirection();
+    app.UseStaticFiles();
 
-app.UseAuthorization();
+    app.UseRouting();
 
-app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Dashboard}/{action=Index}/{id?}");
+    app.UseAuthorization();
+
+    //app.MapControllerRoute(
+    //    name: "default",
+    //    pattern: "{controller=Dashboard}/{action=Index}/{id?}");
 
 app.UseEndpoints(endpoints =>
 {
     _ = endpoints.MapControllerRoute(
-      name: "areas",
-      pattern: "{area:exists}/{controller=Register}/{action=Index}/{id?}"
+        name: "areas",
+        pattern: "{area:exists}/{controller=Register}/{action=Index}/{id?}",
+        defaults: new { area = "Writer" }
+    );
+
+    _ = endpoints.MapControllerRoute(
+        name: "default",
+        pattern: "{controller=Dashboard}/{action=Index}/{id?}"
     );
 });
 app.Run();
