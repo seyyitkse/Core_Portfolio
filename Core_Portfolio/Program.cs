@@ -23,6 +23,8 @@ if (!app.Environment.IsDevelopment())
 
     app.UseRouting();
 
+    app.UseAuthentication();
+
     app.UseAuthorization();
 
     //app.MapControllerRoute(
@@ -33,7 +35,7 @@ app.UseEndpoints(endpoints =>
 {
     _ = endpoints.MapControllerRoute(
         name: "areas",
-        pattern: "{area:exists}/{controller=Register}/{action=Index}/{id?}",
+        pattern: "{area:exists}/{controller=Login}/{action=Index}/{id?}",
         defaults: new { area = "Writer" }
     );
 
