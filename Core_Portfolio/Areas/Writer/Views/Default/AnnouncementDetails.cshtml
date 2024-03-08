@@ -1,0 +1,30 @@
+﻿@model EntityLayer.Concrete.Announcement
+
+@{
+    ViewData["Title"] = "AnnouncementDetails";
+    Layout = "~/Views/Shared/_WriterLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-6">
+        <h1>Announcements Details</h1>
+        <br />
+        <form class="form-group">
+            @Html.Label("ID")
+            @Html.TextBoxFor(x => x.ID, new { @class = "form-control", @readonly = true })
+            <br />
+            @Html.Label("Title")
+            @Html.TextBoxFor(x => x.Title, new { @class = "form-control", @readonly =true })
+            <br />
+            @Html.Label("Content")
+            @Html.TextAreaFor(x => x.Content, 10, 3, new { @class = "form-control", @readonly = "readonly" })
+            <br />
+            <a href="@Url.Action("Index", "Default")" class="btn btn-primary">Back to Home</a>
+        
+        </form>
+    </div>
+</div>
+
+<div class="row">
+   
+</div>
