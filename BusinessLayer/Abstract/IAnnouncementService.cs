@@ -9,5 +9,6 @@ namespace BusinessLayer.Abstract
 {
     public interface IAnnouncementService:IGenericService<Announcement>
     {
+        public List<Announcement> GetLastThreeAnnouncements();
     }
 }

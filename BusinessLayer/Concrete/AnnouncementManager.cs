@@ -18,6 +18,11 @@ namespace BusinessLayer.Concrete
             _announcementdal = announcementdal;
         }
 
+        public List<Announcement> GetLastThreeAnnouncements()
+        {
+            return _announcementdal.GetList().TakeLast(3).ToList();
+        }
+
         public void TAdd(Announcement entity)
         {
             _announcementdal.Insert(entity);

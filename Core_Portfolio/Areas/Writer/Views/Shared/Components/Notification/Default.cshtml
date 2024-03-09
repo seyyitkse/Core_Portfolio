@@ -1,0 +1,40 @@
+﻿@using EntityLayer.Concrete
+@model List<Announcement>
+@{
+    string btnClass = "";
+    string btnColor = "";
+}
+<div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
+    <p class="mb-0 font-weight-normal float-left dropdown-header">Notifications</p>
+    @foreach (var item in Model)
+    {
+        <a class="dropdown-item preview-item" href="/Writer/Default/AnnouncementDetails/@item.ID">
+        <div class="preview-thumbnail">
+                @if (item.Status=="Maintenance")
+                {
+                    btnClass = "ti-settings mx-0";
+                    btnColor = "preview-icon bg-warning";
+                }
+                @if (item.Status == "New Writer")
+                {
+                    btnClass = "ti-user mx-0";
+                    btnColor = "preview-icon bg-success";
+                }
+                @if (item.Status == "New Post")
+                {
+                    btnClass = "ti-info-alt mx-0";
+                    btnColor = "preview-icon bg-info";
+                }
+                <div class="@btnColor" style="display:flex;align-items:center;">
+                <i class=@btnClass></i>
+            </div>
+        </div>
+        <div class="preview-item-content">
+            <h6 class="">@item.Title</h6>
+            <p class="font-weight-light small-text mb-0 text-muted">
+                @item.Date.ToShortDateString()
+            </p>
+        </div>
+    </a>
+    }
+</div>
