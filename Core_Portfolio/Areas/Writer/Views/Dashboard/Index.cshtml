@@ -36,7 +36,10 @@
                         <div>
                                 <h2 class="mb-0 font-weight-normal"><i class="icon-sun mr-2"></i>@ViewBag.WeatherCelsius<sup>C</sup></h2>
                                 <br />
-                                <h2 class="mb-0 font-weight-normal"><i class="wi wi-barometer mr-2"></i>@ViewBag.WeatherPressure<sup>hPa</sup></h2>
+                                <h2 class="mb-0 font-weight-normal">
+                                    <i class="icon-pressure mr-2"></i>
+                                    @ViewBag.WeatherPressure<sup></sup>
+                                </h2>
                             </div>
                         <div class="ml-2">
                                 <h4 class="location font-weight-normal">@ViewBag.WeatherCity</h4>
