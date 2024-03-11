@@ -27,7 +27,7 @@ namespace Core_Portfolio.Areas.Writer.Controllers
                 var result = await _signInManager.PasswordSignInAsync(model.UserName, model.Password, true, true);
                 if (result.Succeeded) 
                 { 
-                    return RedirectToAction("Index", "Dashboard");
+                    return RedirectToAction("Index", "Dashboard1");
                 }
                 else
                 {
@@ -35,6 +35,12 @@ namespace Core_Portfolio.Areas.Writer.Controllers
                 }
             }
             return View();
+        }
+        [HttpGet]
+        public async Task<IActionResult> Logout()
+        {
+            await _signInManager.SignOutAsync();
+            return RedirectToAction("Index", "Login", new { area = "Writer" });
         }
     }
 }

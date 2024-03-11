@@ -10,6 +10,7 @@ using System.Runtime.CompilerServices;
 namespace Core_Portfolio.Areas.Writer.Controllers
 {
     [Area("Writer")]
+    [Route("Writer/{controller}/{action}/{id?}")]
     public class MessageController : Controller
     {
         WriterMessageManager writerMessageManager = new WriterMessageManager(new EfWriterMessageDal());
@@ -57,7 +58,7 @@ namespace Core_Portfolio.Areas.Writer.Controllers
             message.SenderName =name;
             message.RecevierName = receivername;
             writerMessageManager.TAdd(message);
-            return RedirectToAction("SenderMessage","Message");
+            return RedirectToAction("SenderMessage");
         }
 
     }

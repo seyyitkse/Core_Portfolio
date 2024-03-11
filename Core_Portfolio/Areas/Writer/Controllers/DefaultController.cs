@@ -8,6 +8,7 @@ namespace Core_Portfolio.Areas.Writer.Controllers
 {
     [Area("Writer")]
     [Authorize]
+    [Route("Writer/{controller}/{action}/{id?}")]
     public class DefaultController : Controller
     {
         AnnouncementManager announcement = new AnnouncementManager(new EfAnnouncementDal());

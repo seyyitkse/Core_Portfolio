@@ -10,10 +10,12 @@ namespace Core_Portfolio.Areas.Writer.Controllers
 {
     [Area("Writer")]
     [Authorize]
-    public class DashboardController : Controller
+    [Route("Writer/{controller}/{action}/{id?}")]
+
+    public class Dashboard1Controller : Controller
     {
         private readonly UserManager<WriterUser> _userManager;
-        public DashboardController(UserManager<WriterUser> userManager)
+        public Dashboard1Controller(UserManager<WriterUser> userManager)
         {
             _userManager = userManager;
         }

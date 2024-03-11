@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace Core_Portfolio.Areas.Writer.Controllers
 {
     [Area("Writer")]
+    [Route("Writer/{controller}/{action}/{id?}")]
     public class RegisterController : Controller
     {
         private readonly UserManager<WriterUser> _userManager;
@@ -55,7 +56,7 @@ namespace Core_Portfolio.Areas.Writer.Controllers
                     var result = await _userManager.CreateAsync(writerUser, user.Password);
                     if (result.Succeeded)
                     {
-                        return RedirectToAction("Index", "Login");
+                        return RedirectToAction("Index", "Login", new {area="Writer"});
                     }
                     else
                     {

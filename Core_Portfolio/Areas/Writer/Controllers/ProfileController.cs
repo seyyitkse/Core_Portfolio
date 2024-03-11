@@ -9,6 +9,8 @@ namespace Core_Portfolio.Areas.Writer.Controllers
 {
     [Area("Writer")]
     [Authorize]
+    [Route("Writer/{controller}/{action}/{id?}")]
+
     public class ProfileController : Controller
     {
         private readonly UserManager<WriterUser> userManager;
