@@ -27,10 +27,10 @@ namespace Core_Portfolio.Controllers
         [HttpPost]
         public PartialViewResult SendMessage(Message message)
         {
-            MessageManager messageManager = new MessageManager(new EfMessageDal());
-            message.Date = Convert.ToDateTime(DateTime.Now.ToShortDateString());
-            message.Status = true;
-            messageManager.TAdd(message);
+            //MessageManager messageManager = new MessageManager(new EfMessageDal());
+            //message.Date = Convert.ToDateTime(DateTime.Now.ToShortDateString());
+            //message.Status = true;
+            //messageManager.TAdd(message);
             return PartialView();
         }
     }

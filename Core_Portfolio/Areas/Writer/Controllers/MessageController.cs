@@ -1,8 +1,10 @@
 ﻿using BusinessLayer.Concrete;
+using DataAccessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Runtime.CompilerServices;
 
 namespace Core_Portfolio.Areas.Writer.Controllers
@@ -32,11 +34,31 @@ namespace Core_Portfolio.Areas.Writer.Controllers
             var messageList = writerMessageManager.GetListSenderMessages(p);
             return View(messageList);
         }
-        [HttpGet]
         public IActionResult MessageDetails(int id)
         {
             WriterMessage values = writerMessageManager.TGetByID(id);
             return View(values);
         }
+        [HttpGet]
+        public IActionResult SendMessage()
+        {
+            return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> SendMessage(WriterMessage message)
+        {
+            var values = await userManager.FindByNameAsync(User.Identity.Name);
+            string mail = values.Email;
+            string name=values.Name+" "+values.Surname;
+            Context c = new Context();
+            var receivername = c.Users.Where(x => x.Email == message.Recevier).Select(y=>y.Name+" "+y.Surname).FirstOrDefault();     
+            message.Date=Convert.ToDateTime(DateTime.Now.ToShortDateString());
+            message.Sender = mail;
+            message.SenderName =name;
+            message.RecevierName = receivername;
+            writerMessageManager.TAdd(message);
+            return RedirectToAction("SenderMessage","Message");
+        }
+
     }
 }
