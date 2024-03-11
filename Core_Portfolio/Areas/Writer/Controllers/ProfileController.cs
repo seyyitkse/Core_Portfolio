@@ -43,6 +43,7 @@ namespace Core_Portfolio.Areas.Writer.Controllers
             }
             user.Name=userEdit.Name;
             user.Surname=userEdit.Surname;
+            user.PasswordHash=userManager.PasswordHasher.HashPassword(user,userEdit.Password);
             var result = await userManager.UpdateAsync(user);
             if (result.Succeeded) 
             {

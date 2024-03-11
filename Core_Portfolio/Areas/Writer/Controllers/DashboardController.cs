@@ -33,9 +33,10 @@ namespace Core_Portfolio.Areas.Writer.Controllers
 
             //statistics
             Context context = new Context();
-            ViewBag.Message = context.Messages.Where(x=>x.Mail==values.Email).Count();
+            ViewBag.Sender = context.WriterMessages.Where(x=>x.Sender==values.Email).Count();
             ViewBag.Announcement=context.Announcements.Count();
             ViewBag.User=context.Users.Count();
+            ViewBag.Skill=context.Skills.Distinct().Count();
             return View(values );
         }
     }
