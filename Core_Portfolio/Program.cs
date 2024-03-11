@@ -39,9 +39,13 @@ app.UseEndpoints(endpoints =>
         defaults: new { area = "Writer" }
     );
 
+});
+app.UseEndpoints(endpoints =>
+{
+
     _ = endpoints.MapControllerRoute(
-        name: "default",
-        pattern: "{controller=Dashboard}/{action=Index}/{id?}"
-    );
+       name: "default",
+       pattern: "{controller=Dashboard}/{action=Index}/{id?}"
+   );
 });
 app.Run();
