@@ -116,7 +116,22 @@
             <span class="menu-title">Contact Message</span>
         </a>
     </li>
-
+    <li class="nav-item menu-items">
+        <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
+            <span class="menu-icon">
+                <i class="mdi mdi-email-outline"></i>
+            </span>
+            <span class="menu-title">Messages</span>
+            <i class="menu-arrow"></i>
+        </a>
+        <div class="collapse" id="auth">
+            <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" asp-controller="AdminMessage" asp-action="ReceiverMessageList"> Inbox </a></li>
+                <li class="nav-item"> <a class="nav-link" asp-controller="AdminMessage" asp-action="SenderMessageList"> Sent </a></li>
+                <li class="nav-item"> <a class="nav-link" asp-controller="AdminMessage" asp-action="AdminMessageSend"> New Message </a></li>
+           </ul>
+        </div>
+    </li>
     <li class="nav-item menu-items">
         <a class="nav-link" target="_blank" asp-controller="Default" asp-action="Index">
             <span class="menu-icon">

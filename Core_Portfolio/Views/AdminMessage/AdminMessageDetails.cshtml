@@ -1,0 +1,45 @@
+﻿@model EntityLayer.Concrete.WriterMessage
+@{
+    ViewData["Title"] = "AdminMessageDetails";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-6">
+        <h1>Message Details</h1>
+        <br />
+        <form class="form-group">
+            <div class="form-group">
+                @Html.Label("Date")
+                @Html.TextBoxFor(model => model.Date, "{0:yyyy-MM-dd}", new { @class = "form-control", @readonly = "readonly", style = "background-color: #343a40; color: #ccc;" })
+            </div>
+            <div class="form-group">
+                @Html.Label("Sender")
+                @Html.TextBoxFor(model => model.Sender, new { @class = "form-control", @readonly = "readonly", style = "background-color: #343a40; color: #ccc;" })
+            </div>
+            <div class="form-group">
+                @Html.Label("Sender Name")
+                @Html.TextBoxFor(model => model.SenderName, new { @class = "form-control", @readonly = "readonly", style = "background-color: #343a40; color: #ccc;" })
+            </div>
+            <div class="form-group">
+                @Html.Label("Receiver")
+                @Html.TextBoxFor(model => model.Recevier, new { @class = "form-control", @readonly = "readonly", style = "background-color: #343a40; color: #ccc;" })
+            </div>
+            <div class="form-group">
+                @Html.Label("Receiver Name")
+                @Html.TextBoxFor(model => model.RecevierName, new { @class = "form-control", @readonly = "readonly", style = "background-color: #343a40; color: #ccc;" })
+            </div>
+            <div class="form-group">
+                @Html.Label("Subject")
+                @Html.TextBoxFor(model => model.Subject, new { @class = "form-control", @readonly = "readonly", style = "background-color: #343a40; color: #ccc;" })
+            </div>
+            <div class="form-group">
+                @Html.Label("Message Content")
+                @Html.TextAreaFor(model => model.MessageContent, new { @class = "form-control", @rows = 3, @readonly = "readonly", style = "background-color: #343a40; color: #ccc;" })
+            </div>
+            <div class="form-group">
+                <a href="@Url.Action("SenderMessageList", "AdminMessage")" class="btn btn-primary">Back to Return</a>
+            </div>
+        </form>
+    </div>
+</div>
