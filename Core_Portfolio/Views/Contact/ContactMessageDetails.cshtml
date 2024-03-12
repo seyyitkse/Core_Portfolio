@@ -1,0 +1,33 @@
+﻿@model EntityLayer.Concrete.ContactMessage
+@{
+    ViewData["Title"] = "ContactMessageDetails";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
+}
+<div class="row">
+    <div class="col-md-6">
+        <h1>Message Details</h1>
+        <br />
+        <form class="form-group">
+            <div class="form-group">
+                @Html.LabelFor(model => model.Date)
+                @Html.TextBoxFor(model => model.Date, "{0:yyyy-MM-dd}", new { @class = "form-control", @readonly = "readonly", style = "background-color: #343a40; color: #ccc;" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.Name)
+                @Html.TextBoxFor(model => model.Name, new { @class = "form-control", @readonly = "readonly", style = "background-color: #343a40; color: #ccc;" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.Mail)
+                @Html.TextBoxFor(model => model.Mail, new { @class = "form-control", @readonly = "readonly", style = "background-color: #343a40; color: #ccc;" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.Content)
+                @Html.TextAreaFor(model => model.Content, new { @class = "form-control", @rows = 3, @readonly = "readonly", style = "background-color: #343a40; color: #ccc;" })
+            </div>
+            <div class="form-group">
+                <a href="@Url.Action("Index", "Contact")" class="btn btn-primary">Back to Return</a>
+            </div>
+        </form>
+    </div>
+</div>
+

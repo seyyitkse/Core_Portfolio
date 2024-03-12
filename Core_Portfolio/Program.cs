@@ -27,28 +27,28 @@ if (!app.Environment.IsDevelopment())
 
     app.UseAuthorization();
 
-app.MapAreaControllerRoute(
-    name: "MyAreaWriter",
-    areaName: "Writer",
-    pattern: "Writer/{controller=Login}/{action=Index}/{id?}");
+//app.MapAreaControllerRoute(
+//    name: "MyAreaWriter",
+//    areaName: "Writer",
+//    pattern: "Writer/{controller=Login}/{action=Index}/{id?}");
 
-//app.MapControllerRoute(
-//    name: "default",
-//    pattern: "{controller=Dashboard}/{action=Index}/{id?}");
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=Dashboard}/{action=Index}/{id?}");
 
 
 
 app.UseEndpoints(endpoints =>
 {
 
-    _ = endpoints.MapControllerRoute(
-      name: "areas",
-      pattern: "{area:exists}/{controller=Login}/{action=Index}/{id?}",
-      defaults: new { area = "Writer" });
-
     //_ = endpoints.MapControllerRoute(
-    //    name: "default",
-    //    pattern: "{controller=Dashboard}/{action=Index}/{id?}");
+    //  name: "areas",
+    //  pattern: "{area:exists}/{controller=Login}/{action=Index}/{id?}",
+    //  defaults: new { area = "Writer" });
+
+    _ = endpoints.MapControllerRoute(
+        name: "default",
+        pattern: "{controller=Dashboard}/{action=Index}/{id?}");
 });
 
 app.Run();

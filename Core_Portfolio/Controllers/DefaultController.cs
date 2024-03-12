@@ -25,7 +25,7 @@ namespace Core_Portfolio.Controllers
             return PartialView();
         }
         [HttpPost]
-        public PartialViewResult SendMessage(Message message)
+        public PartialViewResult SendMessage(ContactMessage message)
         {
             //MessageManager messageManager = new MessageManager(new EfMessageDal());
             //message.Date = Convert.ToDateTime(DateTime.Now.ToShortDateString());
