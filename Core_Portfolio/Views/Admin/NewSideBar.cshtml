@@ -3,8 +3,7 @@
         <div class="profile-desc">
             <div class="profile-pic">
                 <div class="count-indicator">
-                    @*                                 <img src="/corona-free-dark-bootstrap-admin-template-1.0.0/template/assets/images/faces/face1.jpg" />
-                    *@
+            
                     <img class="img-xs rounded-circle " src="/corona-free-dark-bootstrap-admin-template-1.0.0/template/assets/images/faces/face1.jpg" alt="">
                     <span class="count bg-success"></span>
                 </div>
@@ -69,22 +68,6 @@
             <span class="menu-title">Skills</span>
         </a>
     </li>
-     @* <li class="nav-item menu-items">
-        <a class="nav-link" data-toggle="collapse" href="/Views/Skill/Index.cshtml" aria-expanded="false" aria-controls="ui-basic">
-            <span class="menu-icon">
-                <i class="mdi mdi-laptop"></i>
-            </span>
-            <span class="menu-title">Skills</span>
-            <i class="menu-arrow"></i>
-        </a>
-        <div class="collapse" id="ui-basic">
-            <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/buttons.html">Buttons</a></li>
-                <li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/dropdowns.html">Dropdowns</a></li>
-                <li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/typography.html">Typography</a></li>
-            </ul>
-        </div> 
-    </li> *@ 
     <li class="nav-item menu-items">
         <a class="nav-link" asp-controller="Experience" asp-action="Index">
             <span class="menu-icon">
@@ -94,22 +77,13 @@
         </a>
     </li>
     <li class="nav-item menu-items">
-        <a class="nav-link" asp-controller="Experience" asp-action="Index">
+        <a class="nav-link" asp-controller="Tes" asp-action="Index">
             <span class="menu-icon">
-                <i class="mdi mdi-table-large"></i>
+                <i class="mdi mdi-contacts"></i>
             </span>
-            <span class="menu-title">Tables</span>
+            <span class="menu-title">References</span>
         </a>
     </li>
-    <li class="nav-item menu-items">
-        <a class="nav-link" asp-controller="Experience" asp-action="Index">
-            <span class="menu-icon">
-                <i class="mdi mdi-chart-bar"></i>
-            </span>
-            <span class="menu-title">Charts</span>
-        </a>
-    </li>
-
     <li class="nav-item menu-items">
         <a class="nav-link" asp-controller="Portfolio" asp-action="Index">
             <span class="menu-icon">
@@ -118,6 +92,31 @@
             <span class="menu-title">Projects</span>
         </a>
     </li>
+    <li class="nav-item menu-items">
+        <a class="nav-link" asp-controller="About" asp-action="Index">
+            <span class="menu-icon">
+                <i class="mdi mdi-account-details"></i>
+            </span>
+            <span class="menu-title">About</span>
+        </a>
+    </li>
+    <li class="nav-item menu-items">
+        <a class="nav-link" asp-controller="Feature" asp-action="Index">
+            <span class="menu-icon">
+                <i class="mdi mdi-star-circle"></i>
+            </span>
+            <span class="menu-title">Featured posts</span>
+        </a>
+    </li>
+    <li class="nav-item menu-items">
+        <a class="nav-link" target="_blank" asp-controller="Default" asp-action="Index">
+            <span class="menu-icon">
+                <i class="mdi mdi-briefcase"></i>
+            </span>
+            <span class="menu-title">Go to Website</span>
+        </a>
+    </li>
+
     <li class="nav-item menu-items">
         <a class="nav-link" href="../../pages/icons/mdi.html">
             <span class="menu-icon">
@@ -132,22 +131,6 @@
                 <i class="mdi mdi-phone"></i>
             </span>
             <span class="menu-title">Contact</span>
-        </a>
-    </li>
-    <li class="nav-item menu-items">
-        <a class="nav-link" asp-controller="Service" asp-action="Index">
-            <span class="menu-icon">
-                <i class="mdi mdi-contacts"></i>
-            </span>
-            <span class="menu-title">References</span>
-        </a>
-    </li>
-    <li class="nav-item menu-items">
-        <a class="nav-link" asp-controller="Feature" asp-action="Index">
-            <span class="menu-icon">
-                <i class="mdi mdi-star-circle"></i>
-            </span>
-            <span class="menu-title">Featured posts</span>
         </a>
     </li>
     <li class="nav-item menu-items">
@@ -168,4 +151,13 @@
             </ul>
         </div>
     </li>
+    <li class="nav-item">
+        <a class="nav-link" asp-controller="Account" asp-action="Logout">
+            <span class="menu-icon">
+                <i class="mdi mdi-power"></i>
+            </span>
+            <span class="menu-title">Logout</span>
+        </a>
+    </li>
+
 </ul>
