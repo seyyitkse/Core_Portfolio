@@ -18,27 +18,27 @@ namespace BusinessLayer.Concrete
             _socialmediadal = socialmediadal;
         }
 
-        void IGenericService<SocialMedia>.TAdd(SocialMedia entity)
+        public void TAdd(SocialMedia entity)
         {
             _socialmediadal.Insert(entity);
         }
 
-        void IGenericService<SocialMedia>.TDelete(SocialMedia entity)
+        public void TDelete(SocialMedia entity)
         {
             _socialmediadal.Delete(entity);
         }
 
-        SocialMedia IGenericService<SocialMedia>.TGetByID(int id)
+        public SocialMedia TGetByID(int id)
         {
             return _socialmediadal.GetByID(id);
         }
 
-        List<SocialMedia> IGenericService<SocialMedia>.TGetList()
+        public List<SocialMedia> TGetList()
         {
             return _socialmediadal.GetList();
         }
 
-        void IGenericService<SocialMedia>.TUpdate(SocialMedia entity)
+        public void TUpdate(SocialMedia entity)
         {
             _socialmediadal.Update(entity);
         }

@@ -1,0 +1,47 @@
+﻿@model EntityLayer.Concrete.SocialMedia
+
+@{
+    ViewData["Title"] = "AddSocialMedia";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
+}
+
+<div class="card-header border-0">
+    <h3 class="mb-0">Add New Social Media</h3>
+</div>
+<form class="form-control" method="post">
+    <br />
+    <br />
+    <br />
+    <br />
+    @Html.Label("New Social Media Name:")
+    <br />
+    @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+    <br />
+    <br />
+    @Html.Label("New Social Media URL:")
+    <br />
+    @Html.TextBoxFor(x => x.URL, new { @class = "form-control" })
+    <br />
+    @Html.Label("New Social Media Icon URL:")
+    <br />
+    @Html.TextAreaFor(x => x.Icon, new { @class = "form-control" })
+    <br />
+
+    <br />
+    <button class="btn btn-primary" id="btnAdd"> Add Social Media</button>
+    <button class="btn btn-dark"> Cancel </button>
+</form>
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+<script>
+    window.onload = function () {
+        document.getElementById("btnAdd").addEventListener("click", function () {
+            swal({
+                title: "Succesfull!",
+                text: "Adding new social media is successful!",
+                icon: "success"
+            });
+        });
+    };
+</script>

@@ -1,0 +1,48 @@
+﻿@using EntityLayer.Concrete
+@model List<SocialMedia>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
+}
+
+<div class="row">
+
+    <div class="col-lg-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Social Media List Table</h4>
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Name</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+
+                                <tr>
+                                    <td> @item.SocialMediaID </td>
+                                    <td> @item.Name </td>
+                                    <td>
+                                        <div class="avatar-group">
+                                            @Html.ActionLink("Delete", "DeleteSocialMedia", new { id = item.SocialMediaID }, new { @class = "btn btn-danger", onclick = "return confirm ('Do you really want to delete it?')" })
+                                            <a href="/SocialMedia/UpdateSocialMedia/@item.SocialMediaID" class="btn btn-primary"> Update</a>
+                                        </div>
+                                    </td>
+
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="/SocialMedia/AddSocialMedia/" class="btn btn-success">  Add New Social Media </a>
+</div>
+
+
