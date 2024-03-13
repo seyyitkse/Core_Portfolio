@@ -1,0 +1,51 @@
+﻿@using EntityLayer.Concrete
+@model List<Contact>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
+}
+
+<div class="row">
+
+    <div class="col-lg-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Feature List Table</h4>
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Title</th>
+                                <th>Description</th>
+                                <th>Mail</th>
+                                <th>Phone</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+
+                                <tr>
+                                    <td> @item.ContactID </td>
+                                    <td> @item.Title  </td>
+                                    <td> @item.Description </td>
+                                    <td> @item.Mail  </td>
+                                    <td> @item.Phone  </td>
+                                    <td>
+                                        <div class="avatar-group">
+                                            <a href="/SubContact/UpdateSubContact/@item.ContactID" class="btn btn-primary"> Update</a>
+                                        </div>
+                                    </td>
+
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

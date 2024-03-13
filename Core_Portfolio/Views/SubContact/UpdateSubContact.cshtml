@@ -1,0 +1,41 @@
+﻿@model EntityLayer.Concrete.Contact
+@{
+    ViewData["Title"] = "UpdateSubContact";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
+}
+
+
+
+<div class="card-header border-0">
+    <h3 class="mb-0">Update Contact</h3>
+</div>
+<form class="form-control" method="post">
+    <br />
+    <br />
+    <br />
+    <br />
+    @*  Burada idyi vermezsen yeni değer olarak ekleyecektir. *@
+    @Html.HiddenFor(x => x.ContactID)
+    @Html.Label("Title:")
+    <br />
+    @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+    <br />
+    @Html.Label("Description:")
+    <br />
+    @Html.TextAreaFor(x => x.Description, new { @class = "form-control" })
+    <br />
+    @Html.Label("Mail:")
+    <br />
+    @Html.TextBoxFor(x => x.Mail, new { @class = "form-control" })
+    <br />
+    @Html.Label("Phone:")
+    <br />
+    @Html.TextBoxFor(x => x.Phone, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-primary" id="btnAdd"> Update Contact </button>
+</form>
+
+
+
+
+
