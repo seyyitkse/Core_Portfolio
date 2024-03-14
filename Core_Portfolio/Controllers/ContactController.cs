@@ -1,12 +1,14 @@
 ﻿using BusinessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Core_Portfolio.Controllers
-{
+{        
+    [Authorize(Roles = "Admin")]
     public class ContactController : Controller
     {
-        ContactMessageManager messageManager=new ContactMessageManager(new EfContactMessageDal());
+        ContactMessageManager messageManager =new ContactMessageManager(new EfContactMessageDal());
         public IActionResult Index()
         {
             var values = messageManager.TGetList();

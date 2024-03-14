@@ -1,10 +1,12 @@
 ﻿using Core_Portfolio.Areas.Writer.Models;
 using EntityLayer.Concrete;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Core_Portfolio.Areas.Writer.Controllers
 {
+    [AllowAnonymous]
     [Area("Writer")]
     public class LoginController : Controller
     {
