@@ -2,7 +2,7 @@
 
 namespace Core_Portfolio.Controllers
 {
-    public class MainController : Controller
+    public class WriterUserController : Controller
     {
         public IActionResult Index()
         {

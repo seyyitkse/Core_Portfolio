@@ -27,7 +27,7 @@ builder.Services.ConfigureApplicationCookie(options =>
     options.Cookie.HttpOnly = true;
     options.ExpireTimeSpan = TimeSpan.FromMinutes(15);
     options.AccessDeniedPath= "/ErrorPage/Index/";
-    options.LoginPath = "/Writer/Login/Index/";
+    options.LoginPath = "/Home/Index/";
 });
 
 
@@ -55,9 +55,9 @@ app.MapAreaControllerRoute(
     areaName: "Writer",
     pattern: "Writer/{controller=Login}/{action=Index}/{id?}");
 
-//app.MapControllerRoute(
-//    name: "default",
-//    pattern: "{controller=Dashboard}/{action=Index}/{id?}");
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=Home}/{action=Index}/{id?}");
 
 
 
@@ -69,9 +69,9 @@ app.UseEndpoints(endpoints =>
       pattern: "{area:exists}/{controller=Login}/{action=Index}/{id?}",
       defaults: new { area = "Writer" });
 
-    //_ = endpoints.MapControllerRoute(
-    //    name: "default",
-    //    pattern: "{controller=Dashboard}/{action=Index}/{id?}");
+    _ = endpoints.MapControllerRoute(
+        name: "default",
+        pattern: "{controller=Dashboard}/{action=Index}/{id?}");
 });
 
 app.Run();
