@@ -20,6 +20,7 @@ builder.Services.AddMvc(config =>
     config.Filters.Add(new AuthorizeFilter(policy));
 });
 
+builder.Services.AddHttpClient();
 
 
 builder.Services.ConfigureApplicationCookie(options =>

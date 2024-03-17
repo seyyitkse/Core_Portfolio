@@ -7,9 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core_Portfolio", "Core_Port
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusinessLayer", "BusinessLayer\BusinessLayer.csproj", "{87DBE4FB-3F88-4F6C-A43F-A9FF0AF2AE74}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessLayer", "DataAccessLayer\DataAccessLayer.csproj", "{EA1801BB-F4D6-4601-BF42-8BD1AF9B41C1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccessLayer", "DataAccessLayer\DataAccessLayer.csproj", "{EA1801BB-F4D6-4601-BF42-8BD1AF9B41C1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityLayer", "Entity\EntityLayer.csproj", "{9C89BCEA-3444-47F1-ACC8-9F8DB13976B2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EntityLayer", "Entity\EntityLayer.csproj", "{9C89BCEA-3444-47F1-ACC8-9F8DB13976B2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core_Proje_API", "Core_Proje_API\Core_Proje_API.csproj", "{011AC311-E54E-46DC-B362-1D70DEDDC078}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{9C89BCEA-3444-47F1-ACC8-9F8DB13976B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9C89BCEA-3444-47F1-ACC8-9F8DB13976B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9C89BCEA-3444-47F1-ACC8-9F8DB13976B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{011AC311-E54E-46DC-B362-1D70DEDDC078}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{011AC311-E54E-46DC-B362-1D70DEDDC078}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{011AC311-E54E-46DC-B362-1D70DEDDC078}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{011AC311-E54E-46DC-B362-1D70DEDDC078}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
