@@ -59,7 +59,7 @@ app.MapAreaControllerRoute(
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Default}/{action=Index}/{id?}");
 
 
 
@@ -73,7 +73,7 @@ app.UseEndpoints(endpoints =>
 
     _ = endpoints.MapControllerRoute(
         name: "default",
-        pattern: "{controller=Dashboard}/{action=Index}/{id?}");
+        pattern: "{controller=Default}/{action=Index}/{id?}");
 });
 
 app.Run();

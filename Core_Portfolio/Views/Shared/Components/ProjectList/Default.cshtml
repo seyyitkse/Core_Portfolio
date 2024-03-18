@@ -16,10 +16,10 @@
                                         </label>
                                     </div>
                                 </th>
-                                <th> Order No </th>
+                                <th> # </th>
                                 <th> Project </th>
                                 <th> URL </th>
-                                <th> Payment Status </th>
+                                <th> Actions </th>
                             </tr>
                         </thead>
                         <tbody>
@@ -37,14 +37,7 @@
                                 <td> @item.Name </td>
                                 <td> <a href="@item.ProjectURL" target="_blank">Project</a> </td>
                                 <td>
-                                    @if (item.Status==true)
-                                        {
-                                            <div class="badge badge-outline-success">Approved</div>
-                                        }
-                                        else if (item.Status==false)
-                                        {
-                                            <div class="badge badge-outline-warning">Pending</div>
-                                        }
+                                        <a href="/Portfolio/UpdatePortfolio/@item.PortfolioID" class="btn btn-outline-primary">Update</a>
                                 </td>
                             </tr>
                             }

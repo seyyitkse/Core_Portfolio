@@ -4,17 +4,17 @@
             <div class="profile-pic">
                 <div class="count-indicator">
             
-                    <img class="img-xs rounded-circle " src="/corona-free-dark-bootstrap-admin-template-1.0.0/template/assets/images/faces/face1.jpg" alt="">
+                    <img class="img-xs rounded-circle " src="/userimage/@ViewBag.ImageURL" alt="">
                     <span class="count bg-success"></span>
                 </div>
                 <div class="profile-name">
-                    <h5 class="mb-0 font-weight-normal">Henry Klein</h5>
+                    <h5 class="mb-0 font-weight-normal">@ViewBag.UserDetails</h5>
                     <span>Gold Member</span>
                 </div>
             </div>
             <a href="#" id="profile-dropdown" data-toggle="dropdown"><i class="mdi mdi-dots-vertical"></i></a>
             <div class="dropdown-menu dropdown-menu-right sidebar-dropdown preview-list" aria-labelledby="profile-dropdown">
-                <a href="#" class="dropdown-item preview-item">
+                <a href="/Writer/Profile/Index/" class="dropdown-item preview-item">
                     <div class="preview-thumbnail">
                         <div class="preview-icon bg-dark rounded-circle">
                             <i class="mdi mdi-settings text-primary"></i>
@@ -25,7 +25,7 @@
                     </div>
                 </a>
                 <div class="dropdown-divider"></div>
-                <a href="#" class="dropdown-item preview-item">
+                <a href="/Writer/Profile/Index/" class="dropdown-item preview-item">
                     <div class="preview-thumbnail">
                         <div class="preview-icon bg-dark rounded-circle">
                             <i class="mdi mdi-onepassword  text-info"></i>
@@ -36,14 +36,14 @@
                     </div>
                 </a>
                 <div class="dropdown-divider"></div>
-                <a href="#" class="dropdown-item preview-item">
+                <a href="/AdminMessage/ReceiverMessage/" class="dropdown-item preview-item">
                     <div class="preview-thumbnail">
                         <div class="preview-icon bg-dark rounded-circle">
                             <i class="mdi mdi-calendar-today text-success"></i>
                         </div>
                     </div>
                     <div class="preview-item-content">
-                        <p class="preview-subject ellipsis mb-1 text-small">To-do list</p>
+                        <p class="preview-subject ellipsis mb-1 text-small">Inbox</p>
                     </div>
                 </a>
             </div>
@@ -156,6 +156,14 @@
             <span class="menu-title">Go to Website</span>
         </a>
     </li>
+    <li class="nav-item menu-items">
+        <a class="nav-link" target="_blank" asp-area="Writer" asp-controller="Dashboard1" asp-action="Index">
+            <span class="menu-icon">
+                <i class="mdi mdi-account"></i>
+            </span>
+            <span class="menu-title">Go to Writer Panel</span>
+        </a>
+    </li>
 
     <li class="nav-item menu-items">
         <a class="nav-link" asp-controller="AdminMessage" asp-action="Index">
@@ -192,7 +200,7 @@
         </div>
     </li>
     <li class="nav-item">
-        <a class="nav-link" asp-controller="Account" asp-action="Logout">
+        <a class="nav-link" asp-controller="AdminLogin" asp-action="Logout">
             <span class="menu-icon">
                 <i class="mdi mdi-power"></i>
             </span>
