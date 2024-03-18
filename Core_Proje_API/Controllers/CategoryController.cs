@@ -40,7 +40,7 @@ namespace Core_Proje_API.Controllers
         public IActionResult Delete(int id) 
         {
             using var context = new Context();
-            var value=context.Categories.Find(id);
+            var value = context.Find<Category>(id);
             if (value==null) 
             {
                 return NotFound();
@@ -56,10 +56,8 @@ namespace Core_Proje_API.Controllers
         public IActionResult UpdateCategory(Category category)
         {
             using var context = new Context();
-            var value = context.Categories.Find(category.CategoryID);
+            var value = context.Find<Category>(category.CategoryID);
 
-            //var value1=context.Find<Category>(category.CategoryID);
-            
             if (value==null)
             {
                 return NotFound();
