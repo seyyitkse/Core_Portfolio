@@ -7,7 +7,7 @@ using Newtonsoft.Json;
 
 namespace Core_Portfolio.Controllers
 {
-    [AllowAnonymous]
+    [Authorize(Roles = "Admin")]
     public class Experience2Controller : Controller
     {
         ExperienceManager experienceManager = new ExperienceManager(new EfExperienceDal());

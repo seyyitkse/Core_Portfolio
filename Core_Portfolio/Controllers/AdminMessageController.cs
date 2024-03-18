@@ -3,6 +3,7 @@ using DataAccessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Core_Portfolio.Controllers
@@ -11,16 +12,23 @@ namespace Core_Portfolio.Controllers
     public class AdminMessageController : Controller
     {
         WriterMessageManager messageManager = new WriterMessageManager(new EfWriterMessageDal());
-        public IActionResult ReceiverMessageList()
+        private readonly UserManager<WriterUser> userManager;
+
+        public AdminMessageController(UserManager<WriterUser> userManager)
         {
-            string mail = "admin@mail.com";
-            var values=messageManager.GetListRecevierMessages(mail);
+            this.userManager = userManager;
+        }
+
+        public async Task<IActionResult> ReceiverMessageList()
+        {
+            var userDetails = await userManager.FindByNameAsync(User.Identity.Name);
+            var values = messageManager.GetListRecevierMessages(userDetails.Email);
             return View(values);
         }
-        public IActionResult SenderMessageList()
+        public async Task<IActionResult> SenderMessageList()
         {
-            string mail = "admin@mail.com";
-            var values = messageManager.GetListSenderMessages(mail);
+            var userDetails = await userManager.FindByNameAsync(User.Identity.Name);
+            var values = messageManager.GetListSenderMessages(userDetails.Email);
             return View(values);
         }
         public IActionResult DeleteAdminMessage(int id)
@@ -40,10 +48,12 @@ namespace Core_Portfolio.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult AdminMessageSend(WriterMessage newMessage)
+        public async Task<IActionResult> AdminMessageSend(WriterMessage newMessage)
         {
-            newMessage.Sender = "admin@mail.com";
-            newMessage.SenderName = "Admin";
+            var userDetails = await userManager.FindByNameAsync(User.Identity.Name);
+            newMessage.Sender = userDetails.Email;
+            newMessage.SenderName = userDetails.Name;
+            newMessage.Date=DateTime.Now;
             Context c=new Context();
             var receivername= c.Users.Where(x => x.Email == newMessage.Recevier).Select(y => y.Name + " " + y.Surname).FirstOrDefault();
             newMessage.RecevierName = "Test";

@@ -1,9 +1,11 @@
 ﻿using DataAccessLayer.Concrete;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel;
 
 namespace Core_Portfolio.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class TestController : Controller
     {
         private readonly HttpClient _httpClient;
