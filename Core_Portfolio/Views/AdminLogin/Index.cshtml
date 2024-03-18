@@ -49,6 +49,7 @@
                                 <span asp-validation-for="Password" class="text-danger"></span>
                                 <div class="mb-3"><input class="form-control" type="password" asp-for="Password"  placeholder="Password"></div>
                                 <div class="mb-3"><button class="btn btn-primary d-block w-100" type="submit">Login</button></div>
+                                <div class="mb-3"><button class="btn btn-danger d-block w-100" asp-controller="Home" asp-action="Index">Return Home</button></div>
                             </form>
 
                             <div class="text-danger" asp-validation-summary="ModelOnly">

@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Core_Portfolio.Controllers
 {
-    [Authorize(Roles = "Admin")]
+    [AllowAnonymous]
     public class DefaultController : Controller
     {
         public IActionResult Index()
